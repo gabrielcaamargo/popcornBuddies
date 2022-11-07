@@ -25,10 +25,9 @@ interface ResponseInterface {
 
 export default function MovieList({title, seeMoreUrl}: MovieListProps) {
 	const [loading, response] = useFetch("https://dummyjson.com/docs/products?limit=4");
-	useEffect(() => console.log("response", response), []);
 
 	if(loading) {
-		return <h1>Loading...</h1>;
+		return <h1 style={{textAlign: "center"}}>Loading...</h1>;
 	}
 	
 	return (    
