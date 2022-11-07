@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Aside = styled.aside`
   padding: 24px;
   background-color: ${({theme}) => theme.colors.alternativeBackground};
-  height: 100vh;
   box-shadow: 2px 4px 6px rgba(22, 21, 35, 0.6);
 `;
 
 export const Container = styled.div`
-
+  display: flex;
+  flex-direction: column;
 `;
 
 export const UserLinks = styled.ul`
@@ -38,7 +38,7 @@ export const UserLinks = styled.ul`
         height: 2px;
         width: 100%;
         background-color: ${({theme}) => theme.colors.pink.dark};
-        margin-top: 8px;  
+        margin-top: 12px;  
       }
     }
 `;

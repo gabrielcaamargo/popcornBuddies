@@ -7,7 +7,8 @@ export default function MainContent() {
 			<Banner />
 
 			<MovieWrapper>
-				<MovieList />
+				<MovieList title="Trending" seeMoreUrl="/trending" />
+				<MovieList title="Most Watched" seeMoreUrl="/most-watched" />
 			</MovieWrapper>
 		</Main>
 	);

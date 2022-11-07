@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Movie from "../Movie";
 import { Container, ListContainer } from "./styles";
@@ -13,20 +14,38 @@ const listMovies = [
 ];
 
 
-export default function MovieList() {
+interface MovieListProps {
+	title: string;
+	seeMoreUrl: string;
+}
+
+export default function MovieList({title, seeMoreUrl}: MovieListProps) {
+	const [data, setData] = useState(null);
+	useEffect(() => {
+	
+		(async () => {
+			const api = await fetch("https://dummyjson.com/products?limit=10");
+			const json = await api.json();
+			
+			const { products } = json;			
+
+			setData(products);
+		})();
+	}, []);
+
 	return (    
 		<ListContainer>
 			<div className="listHeader">
-				<h3>Trending</h3>
-				<Link to="/trending">See more</Link>
+				<h3>{title}</h3>
+				<Link to={seeMoreUrl}>See more</Link>
 			</div>
 
 			<Container>
-				{listMovies.map(movie => (
+				{data.map(movie => (
 					<Movie 
-						banner={movie.banner}
-						name={movie.movieName}
-						key={Math.random()}
+						banner={movie.brand}
+						name={movie.title}
+						key={movie.id}
 						description={movie.description}
 					/>
 				))}

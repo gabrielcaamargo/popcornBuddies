@@ -7,6 +7,9 @@ export const ListContainer = styled.section`
   }
 
   width: 100%;
+  & + & {
+    margin-top: 32px;
+  }
 
   .listHeader {
     width: 100%;
@@ -30,7 +33,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(4, max-content);
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   margin-top: 12px;
 
 `;
