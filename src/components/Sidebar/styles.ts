@@ -29,7 +29,7 @@ export const UserLinks = styled.ul`
         height: 2px;
         width: 100%;
         background-color: ${({theme}) => theme.colors.pink.dark};
-        margin-top: 8px;
+        margin-top: 8px;  
       }
     }
 `;

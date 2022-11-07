@@ -9,22 +9,22 @@
     "preview": "dev"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.7",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
     "@types/styled-components": "^5.1.26",
-    "framer-motion": "^7.6.4",
+    "@types/swiper": "^6.0.0",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
-    "styled-components": "^5.3.6"
+    "react-slick": "^0.29.0",
+    "styled-components": "^5.3.6",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^9.0.1",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-slick": "^0.23.10",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "@vitejs/plugin-react": "^2.2.0",
