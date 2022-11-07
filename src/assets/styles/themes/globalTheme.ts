@@ -1,6 +1,7 @@
 export default {
 	colors: {
 		background: "#2E2D4D",
+		alternativeBackground: "#1E1D2F",
 		textColor: "#E4E3D3",
 
 		green: {

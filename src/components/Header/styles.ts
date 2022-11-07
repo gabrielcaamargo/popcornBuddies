@@ -6,22 +6,10 @@ export const Container = styled.header`
   padding: 24px 64px;
   box-shadow: 0px 12px 24px rgba(57, 55, 96, 0.6);
 
-  & span {
-    color: ${({theme}) => theme.colors.pink.main}
-  }
-
   & div {
     display: flex;
     align-items: center;
     gap: 24px;
-
-    & ul {
-      display: flex;
-      gap: 12px;
-      li {
-        list-style: none;
-      }
-    }
 
     input {
       border: 2px solid transparent;

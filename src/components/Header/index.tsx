@@ -1,11 +1,12 @@
+import { Title } from "../common/Title";
 import { Container } from "./styles";
 
 export default function Header() {
 	return (
 		<Container>
-			<h1>popcorn
+			<Title>popcorn
 				<span>Buddies</span>
-			</h1>
+			</Title>
 
 			<div>
 				<input type="text" placeholder="Find a movie" />

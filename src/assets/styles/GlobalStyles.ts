@@ -21,4 +21,12 @@ export default createGlobalStyle`
   input {
     font-size: 16px;
   }
+
+  ul {
+      display: flex;
+      gap: 12px;
+      li {
+        list-style: none;
+      }
+    }
 `;
