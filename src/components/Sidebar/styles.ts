@@ -18,9 +18,18 @@ export const UserLinks = styled.ul`
 
     li {
       font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      
+      a {
+        color: inherit;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.2s ease-in;
+        &:hover {
+          filter: brightness(0.8);
+        }
+      }
     }
 
     &:first-of-type {

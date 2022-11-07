@@ -2,6 +2,7 @@ import { Title } from "../common/Title";
 import { Aside, Container, UserLinks } from "./styles";
 
 import { GearSix, LightbulbFilament, PaperPlaneTilt, User } from "phosphor-react";
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
 	return (
@@ -10,33 +11,41 @@ export default function Sidebar() {
 
 			<Container>
 				<UserLinks>
-					<li>My list</li>
-					<li>Trending</li>
-					<li>Most watched</li>
-					<li>Today's recommendation</li>
+					<li><Link to="/my-list">My list</Link></li>
+					<li><Link to="/trending">Trending</Link></li>
+					<li><Link to="/most-watched">Most watched</Link></li>
+					<li><Link to="/recommendation">Today's recommendation</Link></li>
 				</UserLinks>
 
 				<span className="divider"></span>
 
 				<UserLinks>
 					<li>
-						<GearSix size={32} weight="thin" />
-						Settings
+						<Link to="/settings">
+							<GearSix size={32} weight="thin" />
+							Settings
+						</Link>
 					</li>
 
 					<li>
-						<LightbulbFilament size={32} weight="thin" />
-						Support me
+						<Link to="/support-me">
+							<LightbulbFilament size={32} weight="thin" />
+							Support me
+						</Link>
 					</li>
 
 					<li>
-						<PaperPlaneTilt size={32} weight="thin" />
-						Contact me
+						<Link to="/contact-me">
+							<PaperPlaneTilt size={32} weight="thin" />
+							Contact me
+						</Link>
 					</li>
 
 					<li>
-						<User size={32} weight="thin" />
-						Log in
+						<Link to="/login">
+							<User size={32} weight="thin" />
+							Log in
+						</Link>
 					</li>
 				</UserLinks>		
 			</Container>
