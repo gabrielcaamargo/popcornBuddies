@@ -24,12 +24,8 @@ interface ResponseInterface {
 }
 
 export default function MovieList({title, seeMoreUrl}: MovieListProps) {
-	const [loading, response] = useFetch("https://dummyjson.com/docs/products?limit=4");
+	// const [loading, response] = useFetch("https://dummyjson.com/docs/products?limit=4");
 
-	if(loading) {
-		return <h1 style={{textAlign: "center"}}>Loading...</h1>;
-	}
-	
 	return (    
 		<ListContainer>
 			<div className="listHeader">
@@ -38,14 +34,14 @@ export default function MovieList({title, seeMoreUrl}: MovieListProps) {
 			</div>
 
 			<Container>
-				{response?.products?.map((movie: any) => (
+				{/* {response?.products?.map((movie: any) => (
 					<Movie 
 						banner={movie.images[0]}
 						name={movie.title}
 						key={movie.id}
 						description={movie.description}
 					/>
-				))}
+				))} */}
 			</Container>
 		</ListContainer>
 	);
