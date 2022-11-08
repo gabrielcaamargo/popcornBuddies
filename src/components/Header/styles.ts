@@ -24,5 +24,10 @@ export const Container = styled.header`
         border: 2px solid ${({theme}) => theme.colors.pink.main};
       }
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 `;

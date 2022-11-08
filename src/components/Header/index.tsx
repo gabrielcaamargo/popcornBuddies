@@ -1,3 +1,5 @@
+import { User } from "phosphor-react";
+import { Link } from "react-router-dom";
 import { Title } from "../common/Title";
 import { Container } from "./styles";
 
@@ -12,12 +14,26 @@ export default function Header() {
 				<input type="text" placeholder="Find a movie" />
 				<nav>
 					<ul>
-						<li>Trending</li>
-						<li>Genres</li>
-						<li>Most Watched</li>  
+						<li>
+							<Link to="/trending">
+								Trending
+							</Link>
+						</li>
+						<li>
+							<Link to="/most-watched">
+								Most Watched
+							</Link>	
+						</li>
+						<li>
+							<Link to="/available-now">
+								Available now
+							</Link>	
+						</li>  
 					</ul>  
 				</nav>  
-				<p>User</p>
+				<Link to="/user-area">
+					<User size={24} />
+				</Link>
 			</div>  
 		</Container>
 	);
