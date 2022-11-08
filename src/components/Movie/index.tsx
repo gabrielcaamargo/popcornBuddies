@@ -2,7 +2,7 @@ import { MovieContainer } from "./styles";
 
 interface MovieProps {
   name: string;
-  description: string;
+  description: string | undefined;
   banner: string;
 }
 

@@ -18,7 +18,7 @@ export default function MainContent() {
 				<MovieList 
 					title="Trending" 
 					seeMoreUrl="/trending" 
-					handleGetData={getTrendingMovies(`${baseURL}/discover/movie?sort_by=popularity&api_key=${API_KEY}&page=1&limit=4`)}
+					handleGetData={getTrendingMovies(`${baseURL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1&limit=4`)}
 				/>
 			</MovieWrapper>
 		</Main>

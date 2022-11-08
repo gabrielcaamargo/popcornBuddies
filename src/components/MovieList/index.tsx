@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import Movie from "../Movie";
 import { Container, ListContainer } from "./styles";
 
+import { getData } from "../../types/interfaces/getData";
+
 interface MovieListProps {
 	title: string;
 	seeMoreUrl: string;
 	handleGetData: any;
 }
-
-import NoPic from "../../assets/icons/noPic.png";
 
 export default function MovieList({title, seeMoreUrl, handleGetData}: MovieListProps) {
 	function getMoviePic(picUrl: string) {
@@ -18,6 +18,14 @@ export default function MovieList({title, seeMoreUrl, handleGetData}: MovieListP
 		return moviePic;
 	}
 	
+	function handleCreateDotsToString(string: string) {
+		if(string.length > 100) {
+			const slicedString = string.slice(0, 95);
+			const stringWithDots = `${slicedString}...`;
+			return stringWithDots;
+		}
+	}
+
 	return (    
 		<ListContainer>
 			<div className="listHeader">
@@ -26,14 +34,14 @@ export default function MovieList({title, seeMoreUrl, handleGetData}: MovieListP
 			</div>
 			<Container>
 				{handleGetData?.results
-					.filter((movie: any) => movie.poster_path !== null)
+					.filter((movie: getData) => movie.poster_path !== null)
 					.slice(0, 4)
-					.map((movie:any) => (
+					.map((movie:getData) => (
 						<Movie 
 							banner={getMoviePic(movie.poster_path)}
 							name={movie.title}
 							key={movie.id}
-							description={movie.title}
+							description={handleCreateDotsToString(movie.overview)}
 						/>
 					))}
 			</Container>
