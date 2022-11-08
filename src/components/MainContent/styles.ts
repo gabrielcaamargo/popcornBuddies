@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Main = styled.main`
   padding: 24px;
-  max-width: 80%;
-  width: 100%;
   margin: 0 auto 32px;
 `;
 
