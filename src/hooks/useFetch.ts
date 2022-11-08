@@ -9,11 +9,12 @@ export function useFetch() {
 				const data = await fetch(apiCall);
 				const json = await data.json();
 				
-				console.log(json);
 				setResponse(json);
 			}
 			)();
 		}, [apiCall]);
+		
+		return response;
 	}
 
 	return { getTrendingMovies };

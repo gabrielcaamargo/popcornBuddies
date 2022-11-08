@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 export const MovieContainer = styled.div`
-  width: 280px;
-  height: 320px;  
+  width: 300px;
+  height: 360px;  
   border-radius: 8px;
   overflow: hidden;
   background-color: ${({theme}) => theme.colors.alternativeBackground};
 
-  img {
+  .imgArea {
     width: 340px;
-    height: 160px;
+    height: 60%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
 
   .movieInfo {
