@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useFetch() {
-	function getTrendingMovies(apiCall: any) {
+	function getMovies(apiCall: string) {
 		const [response, setResponse] = useState(null);
 
 		useEffect(() => {
@@ -16,6 +16,5 @@ export function useFetch() {
 		
 		return response;
 	}
-
-	return { getTrendingMovies };
+	return { getMovies };
 }

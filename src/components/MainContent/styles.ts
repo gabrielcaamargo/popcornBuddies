@@ -16,6 +16,8 @@ export const Banner = styled.div`
   background-image: url('https://imgs.search.brave.com/qNUKDqr8aQv3Ku207mN484wXpBFRbJ6AqAqiJ1mU-mw/rs:fit:1200:1152:1/g:ce/aHR0cHM6Ly9pbWFn/ZS50bWRiLm9yZy90/L3Avb3JpZ2luYWwv/bnpNbU1ldlFzTDZI/dkhmaTRyd05UMHhM/TnV1LmpwZw');
   background-repeat: no-repeat;
   background-size: cover;
+
+  box-shadow: 2px 4px 6px rgba(22, 21, 35, 0.6);
 `;
 
 export const MovieWrapper = styled.div`
