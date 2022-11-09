@@ -41,7 +41,7 @@ export default function MovieList({title, seeMoreUrl, handleGetData}: MovieListP
 							banner={getMoviePic(movie.poster_path)}
 							name={movie.title}
 							key={movie.id}
-							description={handleCreateDotsToString(movie.overview)}
+							description={movie.overview ? handleCreateDotsToString(movie.overview) : "No description available"}
 						/>
 					))}
 			</Container>

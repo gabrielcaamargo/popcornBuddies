@@ -1,16 +1,16 @@
 import MovieList from "../MovieList";
-import { Banner, Main, MovieWrapper } from "./styles";
+import { MovieWrapper } from "./styles";
 import { useFetch } from "../../hooks/useFetch";
+import Content from "../Content";
 
-export default function MainContent() {
+export default function HomeContent() {
 	const { getMovies } = useFetch();
 
 	const baseURL = "https://api.themoviedb.org/3";
 	const API_KEY = import.meta.env.VITE_API_KEY;
 	
 	return (
-		<Main>
-			<Banner />
+		<Content>
 			<MovieWrapper>
 				<MovieList 
 					title="Trending" 
@@ -30,6 +30,6 @@ export default function MainContent() {
 					handleGetData={getMovies(`${baseURL}/discover/movie?with_genres=35&with_cast=23659&sort_by=revenue.desc&api_key=${API_KEY}`)}
 				/>
 			</MovieWrapper>
-		</Main>
+		</Content>
 	);
 }

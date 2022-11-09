@@ -1,17 +1,17 @@
 import { Wrapper } from "../../components/common/Wrapper";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
-import HomeContent from "../../components/HomeContent";
-import Footer from "../../components/Footer";
 
-export default function Home() {
+export default function Trending() {
 	return (
 		<>
 			<Header />
+      
 			<Wrapper>
 				<Sidebar />
-				<HomeContent />
 			</Wrapper>
+
 			<Footer />
 		</>
 	);

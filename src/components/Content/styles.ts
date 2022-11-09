@@ -17,7 +17,3 @@ export const Banner = styled.div`
 
   box-shadow: 2px 4px 6px rgba(22, 21, 35, 0.6);
 `;
-
-export const MovieWrapper = styled.div`
-  margin-top: 28px;
-`;
