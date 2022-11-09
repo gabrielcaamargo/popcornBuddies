@@ -13,7 +13,7 @@ export default function TrendingContent() {
 			<MovieList 
 				title="Trending"
 				handleGetData={getMovies(`${baseURL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1&limit=24`)}
-				isHome={false}
+				hasLink={false}
 			/>
 		</Content>
 	);

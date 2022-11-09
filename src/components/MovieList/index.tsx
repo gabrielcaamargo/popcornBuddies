@@ -8,10 +8,10 @@ interface MovieListProps {
 	title: string;
 	seeMoreUrl?: string;
 	handleGetData: any;
-	isHome: boolean
+	hasLink: boolean
 }
 
-export default function MovieList({title, seeMoreUrl, handleGetData, isHome}: MovieListProps) {
+export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: MovieListProps) {
 	function getMoviePic(picUrl: string) {
 		const baseURL = "https://image.tmdb.org/t/p/w342";
 		const moviePic = `${baseURL}${picUrl}`;
@@ -33,7 +33,7 @@ export default function MovieList({title, seeMoreUrl, handleGetData, isHome}: Mo
 				<h3>{title}</h3>
 				{seeMoreUrl && <Link to={seeMoreUrl}>See more</Link>}
 			</div>
-			{isHome && 
+			{hasLink && 
 				<Container>
 					{handleGetData?.results
 						.filter((movie: getData) => movie.poster_path !== null)
@@ -49,7 +49,7 @@ export default function MovieList({title, seeMoreUrl, handleGetData, isHome}: Mo
 				</Container>
 			}
 
-			{!isHome && 
+			{!hasLink && 
 						<Container>
 							{handleGetData?.results
 								.filter((movie: getData) => movie.poster_path !== null)

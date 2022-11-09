@@ -13,7 +13,7 @@ export default function Sidebar() {
 				<UserLinks>
 					<li><Link to="/my-list">My list</Link></li>
 					<li><Link to="/trending">Trending</Link></li>
-					<li><Link to="/most-watched">Most watched</Link></li>
+					<li><Link to="/genres">Genres</Link></li>
 					<li><Link to="/recommendation">Today's recommendation</Link></li>
 				</UserLinks>
 

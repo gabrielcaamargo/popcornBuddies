@@ -20,8 +20,8 @@ export default function Header() {
 							</Link>
 						</li>
 						<li>
-							<Link to="/most-watched">
-								Most Watched
+							<Link to="/genres">
+								Genres
 							</Link>	
 						</li>
 						<li>
