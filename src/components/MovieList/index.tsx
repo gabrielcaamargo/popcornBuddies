@@ -6,11 +6,12 @@ import { getData } from "../../types/interfaces/getData";
 
 interface MovieListProps {
 	title: string;
-	seeMoreUrl: string;
+	seeMoreUrl?: string;
 	handleGetData: any;
+	isHome: boolean
 }
 
-export default function MovieList({title, seeMoreUrl, handleGetData}: MovieListProps) {
+export default function MovieList({title, seeMoreUrl, handleGetData, isHome}: MovieListProps) {
 	function getMoviePic(picUrl: string) {
 		const baseURL = "https://image.tmdb.org/t/p/w342";
 		const moviePic = `${baseURL}${picUrl}`;
@@ -30,21 +31,38 @@ export default function MovieList({title, seeMoreUrl, handleGetData}: MovieListP
 		<ListContainer>
 			<div className="listHeader">
 				<h3>{title}</h3>
-				<Link to={seeMoreUrl}>See more</Link>
+				{seeMoreUrl && <Link to={seeMoreUrl}>See more</Link>}
 			</div>
-			<Container>
-				{handleGetData?.results
-					.filter((movie: getData) => movie.poster_path !== null)
-					.slice(0, 4)
-					.map((movie:getData) => (
-						<Movie 
-							banner={getMoviePic(movie.poster_path)}
-							name={movie.title}
-							key={movie.id}
-							description={movie.overview ? handleCreateDotsToString(movie.overview) : "No description available"}
-						/>
-					))}
-			</Container>
+			{isHome && 
+				<Container>
+					{handleGetData?.results
+						.filter((movie: getData) => movie.poster_path !== null)
+						.slice(0, 4)
+						.map((movie:getData) => (
+							<Movie 
+								banner={getMoviePic(movie.poster_path)}
+								name={movie.title}
+								key={movie.id}
+								description={movie.overview ? handleCreateDotsToString(movie.overview) : "No description available"}
+							/>
+						))}
+				</Container>
+			}
+
+			{!isHome && 
+						<Container>
+							{handleGetData?.results
+								.filter((movie: getData) => movie.poster_path !== null)
+								.map((movie:getData) => (
+									<Movie 
+										banner={getMoviePic(movie.poster_path)}
+										name={movie.title}
+										key={movie.id}
+										description={movie.overview ? handleCreateDotsToString(movie.overview) : "No description available"}
+									/>
+								))}
+						</Container>
+			}
 		</ListContainer>
 	);
 }

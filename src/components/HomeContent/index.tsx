@@ -1,7 +1,7 @@
 import MovieList from "../MovieList";
-import { MovieWrapper } from "./styles";
 import { useFetch } from "../../hooks/useFetch";
 import Content from "../Content";
+import { MovieWrapper } from "../Content/styles";
 
 export default function HomeContent() {
 	const { getMovies } = useFetch();
@@ -16,18 +16,21 @@ export default function HomeContent() {
 					title="Trending" 
 					seeMoreUrl="/trending" 
 					handleGetData={getMovies(`${baseURL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1&limit=4`)}
+					isHome={true}
 				/>
 				
 				<MovieList
 					title="Most rated Sci-fi"
 					seeMoreUrl="/sci-fi"
 					handleGetData={getMovies(`${baseURL}/discover/movie?with_genres=878&with_cast=500&sort_by=popularity.desc&api_key=${API_KEY}&page=1&limit=4`)}
+					isHome={true}
 				/>
 
 				<MovieList
 					title="Grossing comedies"
 					seeMoreUrl="/comedies"
 					handleGetData={getMovies(`${baseURL}/discover/movie?with_genres=35&with_cast=23659&sort_by=revenue.desc&api_key=${API_KEY}`)}
+					isHome={true}
 				/>
 			</MovieWrapper>
 		</Content>

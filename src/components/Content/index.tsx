@@ -1,4 +1,4 @@
-import { Banner, Main } from "./styles";
+import { Banner, Main, MovieWrapper } from "./styles";
 
 interface ContentProps {
   children: React.ReactNode
@@ -8,7 +8,9 @@ export default function Content({children}: ContentProps) {
 	return (
 		<Main>
 			<Banner />
-			{children}
+			<MovieWrapper>
+				{children}
+			</MovieWrapper>
 		</Main>
 	);
 }
