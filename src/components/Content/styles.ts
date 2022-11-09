@@ -7,15 +7,21 @@ export const Main = styled.main`
 
 export const Banner = styled.div`
   width: 100%;
-  height: 360px;
+  height: 240px;
   padding: 24px;
   background-color: #fff;
   border-radius: 8px;
-  background-image: url('https://imgs.search.brave.com/qNUKDqr8aQv3Ku207mN484wXpBFRbJ6AqAqiJ1mU-mw/rs:fit:1200:1152:1/g:ce/aHR0cHM6Ly9pbWFn/ZS50bWRiLm9yZy90/L3Avb3JpZ2luYWwv/bnpNbU1ldlFzTDZI/dkhmaTRyd05UMHhM/TnV1LmpwZw');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgba(22, 21, 35, 0.4);
 
   box-shadow: 2px 4px 6px rgba(22, 21, 35, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 64px;
+    color: ${({theme}) => theme.colors.pink.main};
+  }
 `;
 
 export const MovieWrapper = styled.div`

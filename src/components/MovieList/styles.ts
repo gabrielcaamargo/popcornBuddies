@@ -18,7 +18,6 @@ export const ListContainer = styled.section`
     align-items: center;
 
     a {
-      text-decoration: none;
       color: ${({theme}) => theme.colors.pink.main};
       transition: color 0.2s ease-in;
 

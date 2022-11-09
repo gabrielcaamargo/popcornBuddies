@@ -21,8 +21,6 @@ export const UserLinks = styled.ul`
       font-size: 18px;
       
       a {
-        color: inherit;
-        text-decoration: none;
         display: flex;
         align-items: center;
         gap: 4px;

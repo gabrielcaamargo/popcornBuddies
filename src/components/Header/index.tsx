@@ -6,9 +6,11 @@ import { Container } from "./styles";
 export default function Header() {
 	return (
 		<Container>
-			<Title>popcorn
-				<span>Buddies</span>
-			</Title>
+			<Link to="/">
+				<Title>popcorn
+					<span>Buddies</span>
+				</Title>
+			</Link>
 
 			<div>
 				<input type="text" placeholder="Find a movie" />

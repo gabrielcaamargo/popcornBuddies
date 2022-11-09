@@ -25,9 +25,5 @@ export const Container = styled.header`
       }
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
   }
 `;
