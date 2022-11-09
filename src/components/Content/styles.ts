@@ -7,7 +7,7 @@ export const Main = styled.main`
 
 export const Banner = styled.div`
   width: 100%;
-  height: 240px;
+  height: 160px;
   padding: 24px;
   background-color: #fff;
   border-radius: 8px;
