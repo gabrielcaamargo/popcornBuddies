@@ -5,9 +5,9 @@ export default {
 		textColor: "#E4E3D3",
 
 		green: {
-			light: "#8DB99D",
-			main: "#65A47B",
-			dark: "#337357"
+			light: "#82FF9E",
+			main: "#59D079",
+			dark: "#409059"
 		},
 
 		pink: {

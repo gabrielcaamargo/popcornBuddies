@@ -8,9 +8,7 @@ interface MovieProps {
 
 export default function Movie({name, banner, description}: MovieProps) {
 	return (
-		<MovieContainer>
-			{/* <div className="imgArea" style={{backgroundImage: `url(${banner})`}}>
-			</div> */}
+		<MovieContainer onClick={() => console.log(name, banner, description)}>
 			<img src={banner} alt={name} />
 			<div className="movieInfo">
 				<p><strong>{name}</strong></p>

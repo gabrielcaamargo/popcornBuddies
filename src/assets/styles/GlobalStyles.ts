@@ -12,6 +12,11 @@ export default createGlobalStyle`
     background-color: ${({theme}) => theme.colors.background};
     color: ${({theme}) => theme.colors.textColor};
     height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  #modal-root {
+    overflow: hidden;
   }
 
   button {

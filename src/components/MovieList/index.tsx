@@ -43,7 +43,7 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 								banner={getMoviePic(movie.poster_path)}
 								name={movie.title}
 								key={movie.id}
-								description={movie.overview ? handleCreateDotsToString(movie.overview) : "No description available"}
+								description={handleCreateDotsToString(movie.overview)}
 							/>
 						))}
 				</Container>
@@ -58,7 +58,7 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 										banner={getMoviePic(movie.poster_path)}
 										name={movie.title}
 										key={movie.id}
-										description={movie.overview ? handleCreateDotsToString(movie.overview) : "No description available"}
+										description={handleCreateDotsToString(movie.overview)}
 									/>
 								))}
 						</Container>
