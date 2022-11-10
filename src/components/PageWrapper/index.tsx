@@ -13,7 +13,7 @@ interface PageWrapperProps {
 }
 
 export default function PageWrapper({children}: PageWrapperProps) {
-	const { isModalOpen, movieBanner, movieName, movieDescription, movieRate } = useContext(MovieContext);
+	const { isModalOpen, movieBanner, movieName, movieDescription, movieId, movieRate } = useContext(MovieContext);
 
 	return (
 		<AppWrapper style={{overflow: isModalOpen ? "hidden" : "visible"}}>
@@ -29,6 +29,7 @@ export default function PageWrapper({children}: PageWrapperProps) {
 					name={movieName} 
 					description={movieDescription} 
 					rate={movieRate} 
+					id={movieId}
 				/>	
 			}
 		</AppWrapper>

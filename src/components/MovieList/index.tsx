@@ -1,6 +1,3 @@
-import { useContext, useEffect } from "react";
-import { MovieContext } from "../../contexts/MovieContext";
-
 import { Link } from "react-router-dom";
 import Movie from "../Movie";
 import { Container, ListContainer } from "./styles";
@@ -22,10 +19,6 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 		return moviePic;
 	}
 
-	const { isModalOpen } = useContext(MovieContext);
-	useEffect(() => {
-		console.log(isModalOpen);
-	}, [isModalOpen]);
 	return (    
 		<ListContainer>
 			<div className="listHeader">
@@ -44,6 +37,8 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 								key={movie.id}
 								description={movie.overview}
 								rate={movie.vote_average}
+								movieId={movie.id}
+								
 							/>
 						))}
 				</Container>
@@ -60,6 +55,7 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 										key={movie.id}
 										description={movie.overview}
 										rate={movie.vote_average}
+										movieId={movie.id}
 									/>
 								))}
 						</Container>

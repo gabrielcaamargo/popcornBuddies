@@ -10,46 +10,34 @@ interface MovieModalProps {
 	banner: string;
 	rate: number;
 	description: string;
+	id: number
 }
 
-interface MovieInterface {
-  name: string;
-  description: string | undefined;
-  banner: string;
-	rate: number
-}
-
-export default function MovieModal({name, banner, rate, description }: MovieModalProps) {
+export default function MovieModal({name, banner, rate, description, id}: MovieModalProps) {
 	const portalRoot = document.getElementById("modal-root") as HTMLElement;
   
-	const {setIsModalOpen, setMovieList, movieList, isMovieAddedToList, setIsMovieAddedToList} = useContext(MovieContext);
+	const {setIsModalOpen, setMovieList, movieList, movieId} = useContext(MovieContext);
 
 	function handleCloseModal() {
 		setIsModalOpen(false);
 	}
 
-	function handleAddMovieToList(movieName: string) {	
-		if(!isMovieAddedToList) {
-			if (movieList.find((movie) => movie.name === movieName)) {
-				return;
-			}
+	function handleAddFav() {
+		setMovieList((prevState) => [
+			...prevState,
+			{name, description, rate, banner, id: movieId}
+		]);
+	} 
 
-			setMovieList((prevState) => [
-				...prevState,
-				{name, description, banner, rate}
-			]);
-	
-			setIsMovieAddedToList(true);
-		} else {
-			setMovieList((prevState) => (
-				prevState.filter(movie => movie.name !== movieName)
-			));
-			
-			setIsMovieAddedToList(false);
-		}
 
+	function handleRemoveFav(idMovie: number) {
+		setMovieList((prevState) => (
+			prevState.filter(movie => movie.id !== idMovie)
+		));
 	}
 
+	const isAdded = movieList.some(movie => movie.id === movieId);
+	console.log(isAdded);
 	return ReactDOM.createPortal(
 		<Overlay>
 			<Modal>
@@ -78,9 +66,13 @@ export default function MovieModal({name, banner, rate, description }: MovieModa
 									</div>
 								</div>
 
-								<Button onClick={() => handleAddMovieToList(name)} isMovieAdded={isMovieAddedToList}>
-									{!isMovieAddedToList ? "Add to my list" : "Remove from my list"}
+								<Button 
+									onClick={() => isAdded ? handleRemoveFav(id) : handleAddFav(id)} 
+									isMovieAdded={isAdded ? true : false}
+								>
+									{isAdded ? "Remove from my list" : "Add to my list"}
 								</Button>
+
 							</div>
 						</div>
 					</div>

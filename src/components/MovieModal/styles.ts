@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface ButtonProps {
-  isMovieAdded: boolean;
+  isMovieAdded: any;
 }
 
 export const Overlay = styled.div`

@@ -3,7 +3,6 @@ import { MovieContext } from "../../contexts/MovieContext";
 
 import Content from "../Content";
 import Movie from "../Movie";
-import MovieList from "../MovieList";
 import { ListContainer } from "./styles";
 
 export default function MyListContent() {
@@ -19,15 +18,16 @@ export default function MyListContent() {
     
 			<ListContainer>
 				{movieList.length >= 1 && 
-      movieList.map(movie => (      	
-      		<Movie
-      		key={Math.random()}
-      			name={movie.name}
-      			banner={movie.banner}
-      			description={movie.description}
-      			rate={movie.rate}
-      	  />  
-      ))
+      		movieList.map(movie => (      	
+      			<Movie
+      				key={Math.random()}
+      				name={movie.name}
+      				banner={movie.banner}
+      				description={movie.description}
+      				rate={movie.rate}
+      				movieId={movie.id}
+      			/>  
+      		))
 				}
 			</ListContainer>
 		</Content>

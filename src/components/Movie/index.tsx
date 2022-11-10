@@ -6,18 +6,19 @@ interface MovieProps {
   name: string;
   description: string | undefined;
   banner: string;
-	rate: number
+	rate: number;
+	movieId: number;
 }
 
-export default function Movie({name, banner, description, rate}: MovieProps) {
-	const { setIsModalOpen, setMovieBanner, setMovieDescription, setMovieName, setMovieRate } = useContext(MovieContext);
+export default function Movie({name, banner, description, rate, movieId}: MovieProps) {
+	const { setIsModalOpen, setMovieBanner, setMovieDescription, setMovieName, setMovieRate, setMovieId } = useContext(MovieContext);
 	
 	function handleOpenModal() {
 		setMovieBanner(banner);
 		setMovieName(name);
 		setMovieDescription(description);
 		setMovieRate(rate);
-
+		setMovieId(movieId);
 		setIsModalOpen(true);
 	}
 
