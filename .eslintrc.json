@@ -36,6 +36,7 @@
         "linebreak-style": 0,
         "@typescript-eslint/no-empty-interface": 0,
         "react/no-unescaped-entities": 0,
-        "@typescript-eslint/no-empty-function": 0
+        "@typescript-eslint/no-empty-function": 0,
+        "no-mixed-spaces-and-tabs": 0
     }
 }

@@ -14,8 +14,18 @@ const MovieDefaultValues = {
 	setMovieDescription: () => {},
 
 	isModalOpen: false,
-	setIsModalOpen: () => {}
+	setIsModalOpen: () => {},
+
+	movieList: [],
+	setMovieList: () => {},
 };
+
+interface MovieInterface {
+  name: string;
+  description: string | undefined;
+  banner: string;
+	rate: number
+}
 
 interface MovieContextInterface {
   movieName: string,
@@ -32,6 +42,9 @@ interface MovieContextInterface {
 
   isModalOpen: boolean;
 	setIsModalOpen: (setState: boolean) => void,
+
+	movieList: MovieInterface[];
+	setMovieList: (setState: []) => void;
 }
 
 interface MovieContextProviderProps {
@@ -46,6 +59,7 @@ export default function MovieContextProvider({children}: MovieContextProviderPro
 	const [movieRate, setMovieRate] = useState(0);
 	const [movieDescription, setMovieDescription] = useState("");
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [movieList, setMovieList] = useState([]);
 
 	return (
 		<MovieContext.Provider 
@@ -59,7 +73,9 @@ export default function MovieContextProvider({children}: MovieContextProviderPro
 				movieDescription, 
 				setMovieDescription, 
 				isModalOpen, 
-				setIsModalOpen
+				setIsModalOpen,
+				movieList,
+				setMovieList
 			}}>
 			{children}
 		</MovieContext.Provider>

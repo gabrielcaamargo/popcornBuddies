@@ -4,6 +4,7 @@ export const Aside = styled.aside`
   padding: 24px;
   background-color: ${({theme}) => theme.colors.alternativeBackground};
   box-shadow: 2px 4px 6px rgba(22, 21, 35, 0.6);
+  min-height: 100vh;
   height: auto;
 `;
 

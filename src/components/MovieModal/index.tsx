@@ -15,10 +15,19 @@ interface MovieModalProps {
 export default function MovieModal({name, banner, rate, description }: MovieModalProps) {
 	const portalRoot = document.getElementById("modal-root") as HTMLElement;
   
-	const {setIsModalOpen} = useContext(MovieContext);
+	const {setIsModalOpen, setMovieList} = useContext(MovieContext);
 
 	function handleCloseModal() {
 		setIsModalOpen(false);
+	}
+
+	function handleAddMovieToList() {	
+		setMovieList(
+			(prevState: any) => [
+				...prevState,
+				{ name, banner, description}
+			]
+		);
 	}
 
 	return ReactDOM.createPortal(
@@ -49,7 +58,7 @@ export default function MovieModal({name, banner, rate, description }: MovieModa
 									</div>
 								</div>
 
-								<Button>Add to my list</Button>
+								<Button onClick={handleAddMovieToList}>Add to my list</Button>
 							</div>
 						</div>
 					</div>

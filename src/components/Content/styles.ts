@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Main = styled.main`
   padding: 24px;
   margin: 0 auto 32px;
+  width: 100%;
+  max-width: 1440px;
 `;
 
 export const Banner = styled.div`
@@ -26,4 +28,8 @@ export const Banner = styled.div`
 
 export const MovieWrapper = styled.div`
   margin-top: 28px;
+
+  .emptyList {
+    text-align: center;
+  }
 `;

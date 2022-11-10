@@ -34,5 +34,4 @@ export const Container = styled.div`
   justify-content: space-between;
   gap: 8px;
   margin-top: 12px;
-
 `;
