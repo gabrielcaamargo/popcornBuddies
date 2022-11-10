@@ -22,21 +22,32 @@ interface MovieInterface {
 export default function MovieModal({name, banner, rate, description }: MovieModalProps) {
 	const portalRoot = document.getElementById("modal-root") as HTMLElement;
   
-	const {setIsModalOpen, setMovieList, movieList} = useContext(MovieContext);
+	const {setIsModalOpen, setMovieList, movieList, isMovieAddedToList, setIsMovieAddedToList} = useContext(MovieContext);
 
 	function handleCloseModal() {
 		setIsModalOpen(false);
 	}
 
-	function handleAddMovieToList(movieName) {	
-		if (movieList.find((movie) => movie.name === movieName)) {
-			console.log("movie has already been added");
-			return;
+	function handleAddMovieToList(movieName: string) {	
+		if(!isMovieAddedToList) {
+			if (movieList.find((movie) => movie.name === movieName)) {
+				return;
+			}
+
+			setMovieList((prevState) => [
+				...prevState,
+				{name, description, banner, rate}
+			]);
+	
+			setIsMovieAddedToList(true);
+		} else {
+			setMovieList((prevState) => (
+				prevState.filter(movie => movie.name !== movieName)
+			));
+			
+			setIsMovieAddedToList(false);
 		}
-		setMovieList((prevState) => [
-			...prevState,
-			{name, description, banner, rate}
-		]);
+
 	}
 
 	return ReactDOM.createPortal(
@@ -67,7 +78,9 @@ export default function MovieModal({name, banner, rate, description }: MovieModa
 									</div>
 								</div>
 
-								<Button onClick={() => handleAddMovieToList(name)}>Add to my list</Button>
+								<Button onClick={() => handleAddMovieToList(name)} isMovieAdded={isMovieAddedToList}>
+									{!isMovieAddedToList ? "Add to my list" : "Remove from my list"}
+								</Button>
 							</div>
 						</div>
 					</div>

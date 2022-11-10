@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface ButtonProps {
+  isMovieAdded: boolean;
+}
 
 export const Overlay = styled.div`
   width: 100vw;
@@ -103,11 +107,11 @@ export const Modal = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  background-color: ${({theme}) => theme.colors.green.main};
+export const Button = styled.button<ButtonProps>`
+  background-color: ${({theme, isMovieAdded}) => isMovieAdded ? theme.colors.danger.main : theme.colors.green.main};
   border: none;
   outline: none;
-  color: #FFF;
+  color: ${({theme, isMovieAdded}) => isMovieAdded ? theme.colors.danger.textColor : theme.colors.textColor};
   padding: 8px 16px;
   border-radius: 8px;
   font-weight: bold;
@@ -116,10 +120,12 @@ export const Button = styled.button`
   transition: all 0.2s ease-in;
 
   &:hover {
-    background-color: ${({theme}) => theme.colors.green.dark};
+    background-color: ${({theme, isMovieAdded}) => isMovieAdded ? theme.colors.danger.dark : theme.colors.green.dark};
   }
 
   &:active {
-    background-color: ${({theme}) => theme.colors.green.light};
+    background-color: ${({theme, isMovieAdded}) => isMovieAdded ? theme.colors.danger.light : theme.colors.green.light};
   }
+
+
 `;
