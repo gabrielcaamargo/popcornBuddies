@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { MovieContext } from "../../contexts/MovieContext";
+
 import { Button, Modal, Overlay } from "./styles";
 import ReactDOM  from "react-dom";
 import { Star, X } from "phosphor-react";
@@ -5,19 +8,25 @@ import { Star, X } from "phosphor-react";
 interface MovieModalProps {
 	name: string;
 	banner: string;
-	rate: string;
+	rate: number;
 	description: string;
 }
 
 export default function MovieModal({name, banner, rate, description }: MovieModalProps) {
 	const portalRoot = document.getElementById("modal-root") as HTMLElement;
   
+	const {setIsModalOpen} = useContext(MovieContext);
+
+	function handleCloseModal() {
+		setIsModalOpen(false);
+	}
+
 	return ReactDOM.createPortal(
 		<Overlay>
 			<Modal>
 				<div className="modalHeader">
 					<h1>{name}</h1>
-					<button>
+					<button onClick={handleCloseModal}>
 						<X size={32} color="#FFF"/>
 					</button>
 				</div>

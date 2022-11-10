@@ -5,13 +5,16 @@ import GlobalStyles from "../../assets/styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 
 import globalTheme from "../../assets/styles/themes/globalTheme";
+import MovieContextProvider from "../../contexts/MovieContext";
 
 export default function App() {
 	return (
 		<BrowserRouter>
 			<ThemeProvider theme={globalTheme}>
 				<GlobalStyles />
-				<Router />
+				<MovieContextProvider>
+					<Router />
+				</MovieContextProvider>
 			</ThemeProvider>
 		</BrowserRouter>
 	);

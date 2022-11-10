@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { MovieContext } from "../../contexts/MovieContext";
+
 import { Wrapper } from "../common/Wrapper";
 import Footer from "../Footer";
 import Header from "../Header";
@@ -10,15 +13,24 @@ interface PageWrapperProps {
 }
 
 export default function PageWrapper({children}: PageWrapperProps) {
+	const { isModalOpen, movieBanner, movieName, movieDescription, movieRate } = useContext(MovieContext);
+
 	return (
-		<AppWrapper style={{overflow: "visible"}}>
+		<AppWrapper style={{overflow: isModalOpen ? "hidden" : "visible"}}>
 			<Header />
 			<Wrapper>
 				<Sidebar />
 				{children}
 			</Wrapper>
 			<Footer />
-			{/* <MovieModal />		 */}
+			{ isModalOpen && 
+				<MovieModal 
+					banner={movieBanner} 
+					name={movieName} 
+					description={movieDescription} 
+					rate={movieRate} 
+				/>	
+			}
 		</AppWrapper>
 	);
 }

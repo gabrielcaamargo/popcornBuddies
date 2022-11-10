@@ -22,6 +22,20 @@ export const Modal = styled.div`
   gap: 12px;
   display: flex;
   flex-direction: column;
+  
+  @keyframes modalShowUp {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: 0.6s ease-in-out 1 modalShowUp;
+
+
   .modalHeader {
     display: flex;
     justify-content: space-between;

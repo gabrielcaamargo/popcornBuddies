@@ -1,3 +1,6 @@
+import { useContext, useEffect } from "react";
+import { MovieContext } from "../../contexts/MovieContext";
+
 import { Link } from "react-router-dom";
 import Movie from "../Movie";
 import { Container, ListContainer } from "./styles";
@@ -18,15 +21,11 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 
 		return moviePic;
 	}
-	
-	function handleCreateDotsToString(string: string) {
-		if(string.length > 100) {
-			const slicedString = string.slice(0, 95);
-			const stringWithDots = `${slicedString}...`;
-			return stringWithDots;
-		}
-	}
 
+	const { isModalOpen } = useContext(MovieContext);
+	useEffect(() => {
+		console.log(isModalOpen);
+	}, [isModalOpen]);
 	return (    
 		<ListContainer>
 			<div className="listHeader">
@@ -43,7 +42,8 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 								banner={getMoviePic(movie.poster_path)}
 								name={movie.title}
 								key={movie.id}
-								description={handleCreateDotsToString(movie.overview)}
+								description={movie.overview}
+								rate={movie.vote_average}
 							/>
 						))}
 				</Container>
@@ -58,7 +58,8 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 										banner={getMoviePic(movie.poster_path)}
 										name={movie.title}
 										key={movie.id}
-										description={handleCreateDotsToString(movie.overview)}
+										description={movie.overview}
+										rate={movie.vote_average}
 									/>
 								))}
 						</Container>
