@@ -12,22 +12,31 @@ interface MovieModalProps {
 	description: string;
 }
 
+interface MovieInterface {
+  name: string;
+  description: string | undefined;
+  banner: string;
+	rate: number
+}
+
 export default function MovieModal({name, banner, rate, description }: MovieModalProps) {
 	const portalRoot = document.getElementById("modal-root") as HTMLElement;
   
-	const {setIsModalOpen, setMovieList} = useContext(MovieContext);
+	const {setIsModalOpen, setMovieList, movieList} = useContext(MovieContext);
 
 	function handleCloseModal() {
 		setIsModalOpen(false);
 	}
 
-	function handleAddMovieToList() {	
-		setMovieList(
-			(prevState: any) => [
-				...prevState,
-				{ name, banner, description}
-			]
-		);
+	function handleAddMovieToList(movieName) {	
+		if (movieList.find((movie) => movie.name === movieName)) {
+			console.log("movie has already been added");
+			return;
+		}
+		setMovieList((prevState) => [
+			...prevState,
+			{name, description, banner, rate}
+		]);
 	}
 
 	return ReactDOM.createPortal(
@@ -58,7 +67,7 @@ export default function MovieModal({name, banner, rate, description }: MovieModa
 									</div>
 								</div>
 
-								<Button onClick={handleAddMovieToList}>Add to my list</Button>
+								<Button onClick={() => handleAddMovieToList(name)}>Add to my list</Button>
 							</div>
 						</div>
 					</div>

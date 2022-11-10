@@ -44,7 +44,7 @@ interface MovieContextInterface {
 	setIsModalOpen: (setState: boolean) => void,
 
 	movieList: MovieInterface[];
-	setMovieList: (setState: []) => void;
+	setMovieList: (setState: MovieInterface[]) => void;
 }
 
 interface MovieContextProviderProps {
@@ -59,7 +59,7 @@ export default function MovieContextProvider({children}: MovieContextProviderPro
 	const [movieRate, setMovieRate] = useState(0);
 	const [movieDescription, setMovieDescription] = useState("");
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [movieList, setMovieList] = useState([]);
+	const [movieList, setMovieList] = useState<MovieInterface[]>([]);
 
 	return (
 		<MovieContext.Provider 
