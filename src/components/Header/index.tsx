@@ -13,7 +13,6 @@ export default function Header() {
 			</Link>
 
 			<div>
-				<input type="text" placeholder="Find a movie" />
 				<nav>
 					<ul>
 						<li>
