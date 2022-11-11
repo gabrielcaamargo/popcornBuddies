@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import { Title } from "../common/Title";
 import { Aside, Container, UserLinks } from "./styles";
 
@@ -5,6 +7,8 @@ import { GearSix, LightbulbFilament, PaperPlaneTilt, User } from "phosphor-react
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
+	const { isUserLogged, userName } = useContext(UserContext);
+
 	return (
 		<Aside>
 			<Title>popcorn<span>Buddies</span></Title>
@@ -42,9 +46,9 @@ export default function Sidebar() {
 					</li>
 
 					<li>
-						<Link to="/login">
+						<Link to="/user">
 							<User size={32} weight="thin" />
-							Log in
+							{isUserLogged ? userName : "Log in"}
 						</Link>
 					</li>
 				</UserLinks>		

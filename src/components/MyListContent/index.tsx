@@ -11,7 +11,7 @@ export default function MyListContent() {
 	useEffect(() => console.log(movieList), []);
   
 	return (
-		<Content bannerTitle="My List">
+		<Content bannerTitle="My List" isLoginPage={false}>
 			{movieList.length === 0 && 
       <h1 className="emptyList">Your list is currently empty. Add a movie!</h1>
 			}

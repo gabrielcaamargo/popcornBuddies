@@ -26,6 +26,14 @@ export const Banner = styled.div`
   }
 `;
 
+export const UserGreeting = styled.h1`
+  margin: 24px 0;
+
+span {
+    color: ${({theme}) => theme.colors.pink.main};
+  }
+`;
+
 export const MovieWrapper = styled.div`
   margin-top: 28px;
 
@@ -33,3 +41,4 @@ export const MovieWrapper = styled.div`
     text-align: center;
   }
 `;
+

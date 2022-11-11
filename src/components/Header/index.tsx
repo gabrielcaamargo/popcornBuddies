@@ -32,7 +32,7 @@ export default function Header() {
 						</li>  
 					</ul>  
 				</nav>  
-				<Link to="/user-area">
+				<Link to="/user">
 					<User size={24} />
 				</Link>
 			</div>  

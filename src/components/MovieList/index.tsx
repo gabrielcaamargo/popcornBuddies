@@ -62,4 +62,4 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 			}
 		</ListContainer>
 	);
-}
+}	

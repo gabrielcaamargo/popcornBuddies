@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import MovieList from "../MovieList";
 import { useFetch } from "../../hooks/useFetch";
 import Content from "../Content";
@@ -9,7 +11,7 @@ export default function HomeContent() {
 	const API_KEY = import.meta.env.VITE_API_KEY;
 	
 	return (
-		<Content bannerTitle="Home">
+		<Content bannerTitle="Home" isLoginPage={false}>
 			<MovieList 
 				title="Trending" 
 				seeMoreUrl="/trending" 

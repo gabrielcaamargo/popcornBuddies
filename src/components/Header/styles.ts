@@ -10,20 +10,5 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     gap: 24px;
-
-    input {
-      border: 2px solid transparent;
-      outline: none;
-      border-radius: 8px;
-      padding: 8px 32px;
-      font-size: 16px;
-
-      transition: all 0.2s ease-in;
-
-      &:focus {
-        border: 2px solid ${({theme}) => theme.colors.pink.main};
-      }
-    }
-
   }
 `;

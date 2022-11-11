@@ -9,7 +9,7 @@ export default function GenresContent() {
 	const { getMovies } = useFetch();
 
 	return (
-		<Content bannerTitle="Genres">
+		<Content bannerTitle="Genres" isLoginPage={false}>
 			<MovieList 
 				title="Dramas"
 				hasLink={true} 
