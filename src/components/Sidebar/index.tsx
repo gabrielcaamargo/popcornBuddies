@@ -25,24 +25,10 @@ export default function Sidebar() {
 
 				<UserLinks>
 					<li>
-						<Link to="/settings">
-							<GearSix size={32} weight="thin" />
-							Settings
-						</Link>
-					</li>
-
-					<li>
-						<Link to="/support-me">
-							<LightbulbFilament size={32} weight="thin" />
-							Support me
-						</Link>
-					</li>
-
-					<li>
-						<Link to="/contact-me">
+						<a href="https://instagram.com/gabcamargo" target="_blank" rel="noreferrer">
 							<PaperPlaneTilt size={32} weight="thin" />
 							Contact me
-						</Link>
+						</a>
 					</li>
 
 					<li>
