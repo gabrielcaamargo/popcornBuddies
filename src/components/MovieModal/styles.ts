@@ -126,6 +126,4 @@ export const Button = styled.button<ButtonProps>`
   &:active {
     background-color: ${({theme, isMovieAdded}) => isMovieAdded ? theme.colors.danger.light : theme.colors.green.light};
   }
-
-
 `;

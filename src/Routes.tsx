@@ -4,11 +4,13 @@ import Home from "./pages/Home";
 import Trending from "./pages/Trending";
 import Genres from "./pages/Genres";
 import MyList from "./pages/MyList";
+import NotFound from "./pages/NotFound";
 
 export default function Router() {
 	return (
 		<Routes>
 			<Route path="/" element={<Home />}/>
+			<Route path="/*" element={<NotFound />}/>
 			<Route path="/trending" element={<Trending />}/>
 			<Route path="/genres" element={<Genres />}/>
 			<Route path="/my-list" element={<MyList />}/>
