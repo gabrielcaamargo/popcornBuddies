@@ -46,13 +46,6 @@ export default function GenresContent() {
 			/>
 
 			<MovieList 
-				title="Fantasy"
-				hasLink={true} 
-				seeMoreUrl="/genres/fantasy"
-				handleGetData={getMovies(`${baseURL}/discover/movie?with_genres=14&sort_by=popularity.desc&api_key=${API_KEY}`)}
-			/>
-
-			<MovieList 
 				title="Family"
 				hasLink={true} 
 				seeMoreUrl="/genres/family"
