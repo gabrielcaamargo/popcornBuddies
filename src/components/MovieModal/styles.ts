@@ -127,7 +127,9 @@ export const Modal = styled.div`
           }
 
           @media screen and (max-width: 400px) {
-            margin-top: -210px;
+            margin-top: -220px;
+            margin-bottom: 16px;
+            font-size: 14px
           }
 
         }
@@ -174,7 +176,6 @@ export const Modal = styled.div`
           justify-content: space-between;
 
           @media screen and (max-width: 850px) {
-            flex-direction: column;
             justify-content: center;
             gap: 8px;
             margin-top: -12px;
@@ -188,6 +189,9 @@ export const Modal = styled.div`
           }
 
           @media screen and (max-width: 540px) {
+            align-items: center;
+            flex-direction: row;
+
             button {
               font-size: 14px;
             }
