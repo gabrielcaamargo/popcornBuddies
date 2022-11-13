@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "dev",
-    "start": "node dist/*.js"
+    "start": "node dist/index.4ec7a517.js"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.26",
