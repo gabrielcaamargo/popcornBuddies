@@ -9,12 +9,31 @@ export const Container = styled.form`
   justify-content: center;
   margin: auto;
 
-  button {
-    margin-top: 24px;
+  .buttons-container {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+
+    a {
+      width: 50%
+    }
   }
 
-  a {
-    width: 100%;
+  @media screen and (max-width: 768px) {
+    height: 52vh;
+    margin: 0;
+
+    justify-content: flex-start;
+
+    .buttons-container {
+      a {
+        width: 70%;
+      }
+    }
   }
 `;
 
@@ -30,8 +49,4 @@ export const Input = styled.input`
   &:focus {
     border: 2px solid ${({theme}) => theme.colors.pink.main};
   }
-  & + & {
-    margin-top: 8px;
-  }
-
 `;

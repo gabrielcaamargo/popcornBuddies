@@ -18,22 +18,33 @@ export default function UserAreaContent() {
 	}
 
 
+	function handleUserLogout() {
+		setIsUserLogged(false);
+	}
+
 	return (
 		<Content bannerTitle="Log In" isLoginPage>
 			{isUserLogged && (
 				<Container>
 					<h1>Welcome, {userName}</h1>
 
-					<Link to="/" style={{width: "50%"}}>
-						<Button>Back to home</Button>
-					</Link>
+					<div className="buttons-container">
+						<Link to="/">
+							<Button>Back to home</Button>
+						</Link>
+						<Link to="/user">
+							<Button onClick={handleUserLogout}>Log out</Button>
+						</Link>
+					</div>
 				</Container>
 			)}
 
 			{!isUserLogged && (
 				<Container onSubmit={handleSubmit}>
 					<Input placeholder="Username" onChange={(event) => handleSetUserData(event, setUserName)}/>
-					<Button disabled={userName.length < 1}>Log in</Button>
+					<div className="buttons-container">
+						<Button disabled={userName.length < 1}>Log in</Button>
+					</div>
 				</Container>
 			)}
 		</Content>

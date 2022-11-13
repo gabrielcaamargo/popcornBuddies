@@ -9,6 +9,9 @@ import UserArea from "./pages/UserArea";
 import Dramas from "./pages/Dramas";
 import Action from "./pages/Action";
 import Horror from "./pages/Horror";
+import Documentary from "./pages/Documentary";
+import Comedy from "./pages/Comedy";
+import Family from "./pages/Family";
 
 export default function Router() {
 	return (
@@ -19,6 +22,9 @@ export default function Router() {
 			<Route path="/genres/drama" element={<Dramas />}/>
 			<Route path="/genres/action" element={<Action />}/>
 			<Route path="/genres/horror" element={<Horror />}/>
+			<Route path="/genres/documentary" element={<Documentary />}/>
+			<Route path="/genres/comedy" element={<Comedy />}/>
+			<Route path="/genres/family" element={<Family />}/>
 			<Route path="/my-list" element={<MyList />}/>
 			<Route path="/user" element={<UserArea />}/>
 			<Route path="/*" element={<NotFound />}/>

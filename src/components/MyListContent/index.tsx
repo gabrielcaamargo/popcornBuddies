@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { MovieContext } from "../../contexts/MovieContext";
 
 import Content from "../Content";
@@ -7,13 +7,13 @@ import { ListContainer } from "./styles";
 
 export default function MyListContent() {
 	const { movieList } = useContext(MovieContext);
-  
-	useEffect(() => console.log(movieList), []);
-  
+    
 	return (
 		<Content bannerTitle="My List" isLoginPage={false}>
 			{movieList.length === 0 && 
-      <h1 className="emptyList">Your list is currently empty. Add a movie!</h1>
+				<div className="emptyList">
+					<h1>Your list is currently empty. Add a movie!</h1>
+				</div>
 			}
     
 			<ListContainer>

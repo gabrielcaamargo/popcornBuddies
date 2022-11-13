@@ -6,10 +6,7 @@ export const MovieContainer = styled.div`
   padding-bottom: 32px;
   overflow: hidden;
   background-color: ${({theme}) => theme.colors.alternativeBackground};
-
-  img {
-    height: 513px;
-  }
+  cursor: pointer;
 
   .movieInfo {
     padding: 12px;
@@ -22,6 +19,14 @@ export const MovieContainer = styled.div`
 
     small {
       font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+
+    img {
+      width: 100%
     }
   }
 `;

@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MovieContext } from "../../contexts/MovieContext";
+import { UserContext } from "../../contexts/UserContext";
 
 import { Button, Modal, Overlay } from "./styles";
 import ReactDOM  from "react-dom";
 import { Star, X } from "phosphor-react";
+import { Link } from "react-router-dom";
 
 interface MovieModalProps {
 	name: string;
@@ -17,6 +19,8 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 	const portalRoot = document.getElementById("modal-root") as HTMLElement;
   
 	const {setIsModalOpen, setMovieList, movieList, movieId} = useContext(MovieContext);
+
+	const {isUserLogged} = useContext(UserContext);
 
 	function handleCloseModal() {
 		setIsModalOpen(false);
@@ -35,6 +39,12 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 			prevState.filter(movie => movie.id !== idMovie)
 		));
 	}
+
+	useEffect(() => {
+		return () => {
+			setIsModalOpen(false);
+		};
+	}, []);
 
 	const isAdded = movieList.some(movie => movie.id === movieId);
 	console.log(isAdded);
@@ -69,11 +79,17 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 								<Button 
 									onClick={() => isAdded ? handleRemoveFav(id) : handleAddFav(id)} 
 									isMovieAdded={isAdded ? true : false}
+									disabled={!isUserLogged}
 								>
 									{isAdded ? "Remove from my list" : "Add to my list"}
 								</Button>
-
 							</div>
+							{!isUserLogged && (
+								<div className="notLogged">
+									<p>You must be logged to add to your list</p>
+									<Link to="/user"><small>Log in</small></Link>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

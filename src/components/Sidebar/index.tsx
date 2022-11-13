@@ -3,7 +3,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { Title } from "../common/Title";
 import { Aside, Container, UserLinks } from "./styles";
 
-import { GearSix, LightbulbFilament, PaperPlaneTilt, User } from "phosphor-react";
+import { PaperPlaneTilt, User } from "phosphor-react";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
@@ -18,7 +18,6 @@ export default function Sidebar() {
 					<li><Link to="/my-list">My list</Link></li>
 					<li><Link to="/trending">Trending</Link></li>
 					<li><Link to="/genres">Genres</Link></li>
-					<li><Link to="/recommendation">Today's recommendation</Link></li>
 				</UserLinks>
 
 				<span className="divider"></span>

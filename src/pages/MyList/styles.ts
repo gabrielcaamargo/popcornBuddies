@@ -13,4 +13,19 @@ export const Container = styled.div`
   a {
     width: 100%;
   }
+
+  @media screen and (max-width: 768px) {
+    height: 52vh;
+    margin-top: 32vh;
+    justify-content: flex-start;
+    text-align: center;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    a {
+      width: 80%;
+    }
+  }
 `;

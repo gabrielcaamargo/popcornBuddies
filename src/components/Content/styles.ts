@@ -5,6 +5,24 @@ export const Main = styled.main`
   margin: 0 auto 32px;
   width: 100%;
   max-width: 1440px;
+
+  @media screen and (max-width: 1400px) {
+    max-width: 1100px;
+  }
+
+  @media screen and (max-width:1024px) {
+    max-width: 900px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .emptyList {
+      height: 27vh;
+
+      h1 {
+        margin-top: 20vh
+      }
+    }
+  }
 `;
 
 export const Banner = styled.div`
@@ -23,6 +41,14 @@ export const Banner = styled.div`
   h1 {
     font-size: 64px;
     color: ${({theme}) => theme.colors.pink.main};
+
+    @media screen and (max-width: 1024px) {
+      font-size: 56px;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 48px
+    }
   }
 `;
 

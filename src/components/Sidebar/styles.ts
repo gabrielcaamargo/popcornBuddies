@@ -6,6 +6,10 @@ export const Aside = styled.aside`
   box-shadow: 2px 4px 6px rgba(22, 21, 35, 0.6);
   min-height: 100vh;
   height: auto;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Container = styled.div`

@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import globalTheme from "../../assets/styles/themes/globalTheme";
 import MovieContextProvider from "../../contexts/MovieContext";
 import UserContextProvider from "../../contexts/UserContext";
+import MenuContextProvider from "../../contexts/MenuContext";
 
 export default function App() {
 	return (
@@ -15,7 +16,9 @@ export default function App() {
 				<GlobalStyles />
 				<UserContextProvider>
 					<MovieContextProvider>
-						<Router />
+						<MenuContextProvider>
+							<Router />
+						</MenuContextProvider>
 					</MovieContextProvider>
 				</UserContextProvider>
 			</ThemeProvider>

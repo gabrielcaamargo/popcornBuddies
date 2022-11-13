@@ -27,14 +27,12 @@ export const Modal = styled.div`
   display: flex;
   flex-direction: column;
   
-  @keyframes modalShowUp {
-    from {
-      opacity: 0;
+  @media screen and (max-width: 980px) {
+      width: 90vw;
     }
 
-    to {
-      opacity: 1;
-    }
+  @media screen and (max-width: 768px) {
+    padding: 48px 24px;
   }
 
   animation: 0.6s ease-in-out 1 modalShowUp;
@@ -44,8 +42,14 @@ export const Modal = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    & > h1 {
+    h1 {
       font-size: 42px;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
     }
 
     & > button {
@@ -69,20 +73,87 @@ export const Modal = styled.div`
     img {
       border-radius: 12px;
     }
-  
+    
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    .moviePresentation {
+      @media screen and (max-width: 768px) {
+        height: 80%;
+        img {
+          height: 80%;
+          width: 100%;
+        }
+      }
+    }
+
 
     .movieInfo {
       .movieDescription {
         .description {
           font-size: 18px;
           line-height: 30px;
+
+          @media screen and (max-width: 768px) {
+            line-height: 28px;
+            font-size: 16px;
+            margin-top: -180px;
+          }
+
         }
+        .notLogged {
+            text-align: center;
+            margin-top: 8px;
+            display: block;
+            margin-top: 12px;
+
+            p {
+              font-size: 18px   
+            }
+
+            a {
+              font-size: 22px;
+              color: ${({theme}) => theme.colors.pink.main}
+            }
+
+            @media screen and (max-width: 768px) {
+              p {
+                font-size: 16px;
+              }
+
+              a {
+                font-size: 20px;
+              }
+            }
+          }
 
         .movieActions {
           margin-top: 24px;
           display: flex;
           align-items: center;
           justify-content: space-between;
+
+          @media screen and (max-width: 850px) {
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            margin-top: -12px;
+
+            button {
+              &[disabled] {
+                background-color: #CCC;
+                cursor: default;
+              }
+            }
+          }
+
+          
 
           .movieRate {
             display: flex;
@@ -98,7 +169,11 @@ export const Modal = styled.div`
               display: flex;
               gap: 4px;
               align-items: center;
+
+
           }
+
+          
         }   
         }
       
