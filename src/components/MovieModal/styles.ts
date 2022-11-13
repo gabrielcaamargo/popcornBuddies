@@ -35,6 +35,11 @@ export const Modal = styled.div`
     padding: 48px 24px;
   }
 
+  @media screen and (max-width: 540px) {
+    height: 85vh;
+    padding: 16px;
+  }
+
   animation: 0.6s ease-in-out 1 modalShowUp;
 
 
@@ -91,6 +96,14 @@ export const Modal = styled.div`
           width: 100%;
         }
       }
+
+      @media screen and (max-width: 540px) {
+        height: 70%;
+
+        img {
+          height: 70%;
+        }
+      }
     }
 
 
@@ -104,6 +117,17 @@ export const Modal = styled.div`
             line-height: 28px;
             font-size: 16px;
             margin-top: -180px;
+          }
+
+          @media screen and (max-width: 540px) {
+            line-height: 25px;
+            margin-top: -260px;
+            font-size: 14px;
+            margin-bottom: 24px;
+          }
+
+          @media screen and (max-width: 400px) {
+            margin-top: -210px;
           }
 
         }
@@ -131,6 +155,16 @@ export const Modal = styled.div`
                 font-size: 20px;
               }
             }
+
+            @media screen and (max-width: 540px) {
+              p {
+                font-size: 14px
+              }
+
+              a {
+                font-size: 16px;
+              }
+            }
           }
 
         .movieActions {
@@ -153,7 +187,11 @@ export const Modal = styled.div`
             }
           }
 
-          
+          @media screen and (max-width: 540px) {
+            button {
+              font-size: 14px;
+            }
+          }
 
           .movieRate {
             display: flex;

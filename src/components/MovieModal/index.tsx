@@ -22,6 +22,8 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 
 	const {isUserLogged} = useContext(UserContext);
 
+	const isMobile = window.innerWidth <= 600 ? true : false;
+
 	function handleCloseModal() {
 		setIsModalOpen(false);
 	}
@@ -70,7 +72,7 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 								<div className="movieRate">
 									<p><strong>Rate:</strong></p>
 									<div className="rateInfo">
-										<Star size={32} color="#FFF" />
+										<Star size={isMobile ? 24 : 32} color="#FFF" />
 										<p>{rate}</p>
 									</div>
 								</div>
