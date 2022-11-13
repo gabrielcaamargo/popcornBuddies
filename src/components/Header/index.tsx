@@ -36,8 +36,8 @@ export default function Header() {
 							</Link>	
 						</li>
 						<li>
-							<Link to="/available-now">
-								Available now
+							<Link to="/my-list">
+								My List
 							</Link>	
 						</li>  
 					</ul>  
