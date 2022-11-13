@@ -7,6 +7,12 @@ export const Aside = styled.aside`
   min-height: 100vh;
   height: auto;
 
+  @media screen and (max-width: 1440px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     display: none;
   }
