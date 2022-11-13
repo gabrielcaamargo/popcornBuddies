@@ -27,7 +27,7 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 	}
 
 	function handleAddFav() {
-		setMovieList((prevState) => [
+		setMovieList((prevState: any) => [
 			...prevState,
 			{name, description, rate, banner, id: movieId}
 		]);
@@ -47,7 +47,6 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 	}, []);
 
 	const isAdded = movieList.some(movie => movie.id === movieId);
-	console.log(isAdded);
 	return ReactDOM.createPortal(
 		<Overlay>
 			<Modal>
@@ -77,7 +76,7 @@ export default function MovieModal({name, banner, rate, description, id}: MovieM
 								</div>
 
 								<Button 
-									onClick={() => isAdded ? handleRemoveFav(id) : handleAddFav(id)} 
+									onClick={() => isAdded ? handleRemoveFav(id) : handleAddFav()} 
 									isMovieAdded={isAdded ? true : false}
 									disabled={!isUserLogged}
 								>

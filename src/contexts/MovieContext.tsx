@@ -52,7 +52,7 @@ interface MovieContextInterface {
 	setIsModalOpen: (setState: boolean) => void,
 
 	movieList: MovieInterface[];
-	setMovieList: (setState: MovieInterface[]) => void;
+	setMovieList: (setState: any) => void;
 }
 
 interface MovieContextProviderProps {

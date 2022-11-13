@@ -5,7 +5,7 @@ import { Container, ListContainer } from "./styles";
 import { getData } from "../../types/interfaces/getData";
 
 interface MovieListProps {
-	title: string;
+	title: string;	
 	seeMoreUrl?: string;
 	handleGetData: any;
 	hasLink: boolean
@@ -30,7 +30,7 @@ export default function MovieList({title, seeMoreUrl, handleGetData, hasLink}: M
 					{handleGetData?.results
 						.filter((movie: getData) => movie.poster_path !== null)
 						.slice(0, 4)
-						.map((movie:getData) => (
+						.map((movie: getData) => (
 							<Movie 
 								banner={getMoviePic(movie.poster_path)}
 								name={movie.title}
